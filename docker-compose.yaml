@@ -24,4 +24,5 @@ services:
     restart: always
     volumes:
       - ./api:/app
-    environment: []
+    environment:
+      docker: 'true'
