@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    volumes:
+      - ./docker/nginx-dev.conf:/etc/nginx/conf.d/default.conf
+      - ./api:/app
+    ports:
+      - 80:80
+    environment:
+      compose: 'true'
+    depends_on:
+      - api
+
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: php.Dockerfile
+    restart: always
+    volumes:
+      - ./api:/app
+    environment: []
