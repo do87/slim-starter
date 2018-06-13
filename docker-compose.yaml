@@ -11,8 +11,6 @@ services:
       - ./api:/app
     ports:
       - 80:80
-    environment:
-      compose: 'true'
     depends_on:
       - api
 
