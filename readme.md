@@ -1,1 +1,1 @@
-# komposer
+# Slim starter
